@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
+
+body {
+  background-image: url("./assets/home/background-home-desktop.jpg");
+  background-size: cover;
+  color: hsl(0, 0%, 100%);
+  font-family: Bellefair;
+  margin: 0;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 3em;
+  margin-right: 0;
+  height: 5em;
+  position: relative;
+  img {
+    height: 3em;
+  }
+  .navbar::after {
+    content: "";
+    height: 0.1rem;
+    width: 50%;
+    background: hsl(0, 0%, 20%, 1);
+    position: absolute;
+    z-index: 1;
+    left: -45%;
+  }
+  .navbar {
+    padding-right: 2em;
+    background: hsl(0, 0%, 20%, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    height: inherit;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+    position: absolute;
+    right: 0;
+    .nav-item {
+      font-size: large;
+      height: 100%;
+      .nav-item-container {
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .nav-index {
+          font-weight: 700;
+          margin-right: 0.5rem;
+        }
+        .nav-value {
+          font-weight: 100;
+          font-size: 1rem;
+          text-transform: uppercase;
+        }
+        &::after {
+          content: "";
+          height: 0.2rem;
+          width: 4em;
+          background: white;
+          display: none;
+          position: absolute;
+          bottom: 0;
+        }
+        &:where(:hover, :focus) {
+          cursor: pointer;
+          &::after {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 17em 15em;
+  .explore {
+    height: 20em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: white;
+    text-transform: uppercase;
+    color: black;
+    justify-self: flex-end;
+    align-self: flex-end;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2em;
+    transition: transform 100ms ease;
+    p {
+      font-size: x-large;
+    }
+    &:where(:hover, :focus) {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+  }
+  * {
+    margin: 0;
+  }
+  .text {
+    width: 31em;
+  }
+  .large-text {
+    font-size: 10em;
+    text-transform: uppercase;
+    line-height: 140%;
+  }
+  .medium-text {
+    font-size: 1.8em;
+    text-transform: uppercase;
+  }
+  .small-text {
+    font-size: 1.4em;
+    line-height: 150%;
+  }
+  .medium-text,
+  .small-text {
+    color: hsl(231, 77%, 90%);
+  }
+}
